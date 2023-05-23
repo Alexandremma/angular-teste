@@ -1,0 +1,133 @@
+/********** MOBILE MENU **************************************************/
+.mobile-nav-menu-container {
+  position: fixed;
+  top: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 100%;
+  background-color: #232323;
+  opacity: 0.9;
+  z-index: 11;
+  transition: 0.3s;
+}
+
+.mobile-nav-menu-container .mobile-menu-list {
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  z-index: 13;
+}
+
+.mobile-nav-menu-container .mobile-menu-list .mobile-menu-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 13;
+}
+
+.mobile-nav-menu-container .mobile-menu-list .mobile-menu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  width: 100%;
+  /* background-color: #fff; */
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 13;
+}
+
+/********** MOBILE HEADER **************************************************/
+header {
+  position: fixed;
+  width: 100%;
+  height: 85px;
+  padding: 0.8rem 2rem;
+  background-color: #fffffff0;
+  z-index: 10;
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-content .logo-container .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-content .logo-container .logo-link .logo-image {
+    width: 4em;
+  }
+
+  /* .header-content .mobile-menu-icon-container {} */
+
+  .header-content .mobile-menu-icon-container #mobile-open-menu-icon {
+    font-size: 1.6rem;
+    transition: 1s;
+  }
+
+  .header-content .mobile-menu-icon-container #mobile-close-menu-icon {
+    display: none;
+    font-size: 1.6rem;
+    transition: 1s;
+  }
+
+  .header-content .desktop-menu-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /********** DESKTOP HEADER **************************************************/
+  header {
+    padding: 0.8rem;
+  }
+
+  header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header .header-content .mobile-menu-icon-container {
+    display: none;
+  }
+
+  header .header-content .desktop-menu-container {
+    display: block;
+  }
+
+  header .header-content .desktop-menu-container .menu-list {
+    display: flex;
+    gap: 1.5rem;
+    height: 100%;
+  }
+
+  header .header-content .desktop-menu-container .menu-list .menu-item {
+    height: 100%;
+  }
+
+  header .header-content .desktop-menu-container .menu-list .menu-item .menu-item-link {
+    padding: 4px 12px;
+    font-weight: 600;
+    transition: 0.1s;
+  }
+
+  header .header-content .desktop-menu-container .menu-list .menu-item .menu-item-link:hover {
+    color: #ffcc00;
+    cursor: pointer;
+    border-bottom: 3px solid #ffcc00;
+    border-radius: 8px;
+  }
+}
